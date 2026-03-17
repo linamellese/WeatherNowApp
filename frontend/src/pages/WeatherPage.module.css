@@ -1,0 +1,264 @@
+.container {
+  padding: 2rem 0;
+  animation: fadeIn 0.5s ease;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  margin-top: 2.5rem;
+}
+
+.header > :first-child {
+  flex: 1;
+  min-width: 300px;
+}
+
+.refreshButton {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  color: var(--text-primary);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1.2rem;
+}
+
+.refreshButton:hover:not(:disabled) {
+  transform: rotate(180deg);
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.refreshButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.spinning {
+  animation: spin 1s linear infinite;
+}
+
+.error {
+  background: rgba(255, 99, 99, 0.2);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 99, 99, 0.3);
+  border-radius: 15px;
+  padding: 2rem;
+  text-align: center;
+  color: var(--text-primary);
+  margin: 2rem 0;
+  animation: shake 0.5s ease;
+}
+
+.error button {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border: none;
+  border-radius: 50px;
+  padding: 0.8rem 2rem;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: all 0.3s ease;
+}
+
+.error button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+}
+
+.forecastSection {
+  margin: 2rem 0;
+}
+
+.sectionTitle {
+  color: var(--text-primary);
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+  position: relative;
+  display: inline-block;
+}
+
+.sectionTitle::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 50%;
+  height: 2px;
+  background: linear-gradient(90deg, #667eea, transparent);
+}
+
+.forecastContainer {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  padding: 1rem 0.5rem;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+.forecastContainer::-webkit-scrollbar {
+  height: 8px;
+}
+
+.forecastContainer::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+
+.forecastContainer::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+}
+
+.forecastContainer::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes shake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-10px);
+  }
+  75% {
+    transform: translateX(10px);
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem 0;
+  }
+  
+  .header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .header > :first-child {
+    min-width: auto;
+  }
+  
+  .refreshButton {
+    align-self: flex-end;
+  }
+}
+.noForecast {
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--glass-border);
+  border-radius: 20px;
+  padding: 2rem;
+  text-align: center;
+  color: var(--text-primary);
+  margin: 2rem 0;
+  animation: fadeIn 0.5s ease;
+}
+
+.noForecast p {
+  font-size: 1.1rem;
+  opacity: 0.8;
+}
+.header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.header > :first-child {
+  flex: 1;
+  min-width: 300px;
+}
+
+.headerButtons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.iconButton {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  color: var(--text-primary);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1.2rem;
+  backdrop-filter: blur(10px);
+}
+
+.iconButton:hover:not(:disabled) {
+  transform: rotate(180deg);
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.iconButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.spinning {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.noForecast {
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--glass-border);
+  border-radius: 20px;
+  padding: 2rem;
+  text-align: center;
+  color: var(--text-primary);
+  margin: 2rem 0;
+  animation: fadeIn 0.5s ease;
+}
+
+.noForecast p {
+  font-size: 1.1rem;
+  opacity: 0.8;
+}

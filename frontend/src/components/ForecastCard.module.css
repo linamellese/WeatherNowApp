@@ -1,0 +1,96 @@
+.card {
+  min-width: 150px;
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--glass-border);
+  border-radius: 20px;
+  padding: 1.5rem 1rem;
+  text-align: center;
+  color: var(--text-primary);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  animation: fadeIn 0.5s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px) scale(1.05);
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: var(--shadow);
+}
+
+.date {
+  margin-bottom: 1rem;
+}
+
+.day {
+  display: block;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.dateNum {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.weather {
+  margin: 1rem 0;
+}
+
+.weather svg {
+  font-size: 3rem;
+  filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.2));
+  animation: float 3s ease-in-out infinite;
+}
+
+.temperatures {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.high {
+  font-weight: 700;
+  color: #ffd700;
+}
+
+.low {
+  font-weight: 500;
+  opacity: 0.8;
+}
+
+.condition {
+  font-size: 0.9rem;
+  opacity: 0.9;
+  text-transform: capitalize;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+@media (max-width: 768px) {
+  .card {
+    min-width: 120px;
+    padding: 1rem;
+  }
+  
+  .weather svg {
+    font-size: 2.5rem;
+  }
+}

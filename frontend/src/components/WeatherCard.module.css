@@ -1,0 +1,173 @@
+.card {
+  position: relative;
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--glass-border);
+  border-radius: 30px;
+  padding: 2rem;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  transition: all 0.3s ease;
+  animation: slideUp 0.5s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+}
+
+.glassEffect {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+  animation: rotate 20s linear infinite;
+  pointer-events: none;
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+}
+
+.location {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.location h2 {
+  color: var(--text-primary);
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.date {
+  color: var(--text-secondary);
+  font-size: 1rem;
+}
+
+.mainWeather {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.temperature {
+  display: flex;
+  align-items: flex-start;
+  line-height: 1;
+}
+
+.temp {
+  font-size: 6rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.unit {
+  font-size: 2rem;
+  color: var(--text-secondary);
+  margin-top: 1rem;
+}
+
+.condition {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-primary);
+}
+
+.condition svg {
+  font-size: 5rem;
+  filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.2));
+}
+
+.condition span {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.details {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.detailItem {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  transition: all 0.3s ease;
+}
+
+.detailItem:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.05);
+}
+
+.detailIcon {
+  font-size: 2rem;
+  color: var(--text-primary);
+}
+
+.detailInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.detailLabel {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.detailValue {
+  color: var(--text-primary);
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 768px) {
+  .temp {
+    font-size: 4rem;
+  }
+  
+  .condition svg {
+    font-size: 4rem;
+  }
+  
+  .condition span {
+    font-size: 1.2rem;
+  }
+}
