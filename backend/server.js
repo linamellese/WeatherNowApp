@@ -12,7 +12,7 @@ const BASE_URL = 'https://api.openweathermap.org/data/2.5';
 
 // Middleware
 app.use(cors({
-    origin: 'http://localhost:3000',
+    origin: process.env.CORS_ORIGIN || 'http://localhost:3000',
     credentials: true
 }));
 app.use(express.json());
@@ -128,5 +128,5 @@ app.get('/api/weather/forecast/:city', async (req, res) => {
 
 app.listen(PORT, () => {
     console.log(`🚀 Server running on port ${PORT}`);
-    console.log(`🌐 CORS enabled for: http://localhost:3000`);
+    console.log(`🌐 CORS enabled for: ${process.env.CORS_ORIGIN || 'http://localhost:3000'}`);
 });
