@@ -4,7 +4,7 @@
   align-items: center;
   justify-content: center;
   position: relative;
-  overflow: hidden;
+  overflow-x: hidden;
   margin-top: 2.5rem;
 }
 
@@ -216,5 +216,48 @@
   
   .statValue {
     font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .titleGradient {
+    font-size: 1.25rem;
+  }
+  
+  .subtitle {
+    font-size: 0.95rem;
+    margin-bottom: 2rem;
+    padding: 0 0.5rem;
+  }
+  
+  .searchSection {
+    margin-bottom: 2.5rem;
+  }
+
+  .features {
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+
+  .feature {
+    font-size: 0.9rem;
+  }
+  
+  .stats {
+    margin-top: 2.5rem;
+    gap: 1.25rem;
+  }
+
+  .statValue {
+    font-size: 1.6rem;
+  }
+
+  .statLabel {
+    font-size: 0.8rem;
   }
 }
