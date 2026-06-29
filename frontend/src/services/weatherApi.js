@@ -1,6 +1,13 @@
 import axios from 'axios'
 
-const API_BASE_URL = import.meta.env.VITE_API_URL || '/api'
+const getApiBaseUrl = () => {
+  const url = import.meta.env.VITE_API_URL
+  if (!url) return '/api'
+  const cleanUrl = url.endsWith('/') ? url.slice(0, -1) : url
+  return cleanUrl.endsWith('/api') ? cleanUrl : `${cleanUrl}/api`
+}
+
+const API_BASE_URL = getApiBaseUrl()
 
 export const getCurrentWeather = async (city, unit = 'metric') => {
   try {
